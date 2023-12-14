@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Call of HTL: Campus Warfare I</title>
+        <link rel="stylesheet" href="Call_of_HTL_style.css"/>
+    </head>
+    <body onload="init()">
+        <script src="Call_of_HTL_JavaScript.js"></script>
+        <script src="Call_of_HTL_player_drawing.js"></script>
+        <!--<script src="Call_of_HTL_walls_rendering_drawing.js"></script>-->
+    
+        <h1>Call of HTL: Campus Warfare I</h1>
+        <h3>Steuerung Player 1: W, A, S, D | Steuerung Player 2: I, J, K, L</h3>
+        <h3>Details Einblenden: Z | Zoom: +/-</h3>
+        
+        <div id="canvas-container" class="canvas-container" height="500px">
+            <div id="abilities1" class="abilities1">
+                <button id="radiance1" class="button1-1">
+                    <span>E</span>
+                </button>
+                <button id="goldenGun1" class="button2-1">
+                    <span>R</span>
+                </button>
+                <button id="wardOfDawn1" class="button3-1">
+                    <span>F</span>
+                </button>
+            </div>
+            
+            <canvas id="game1" class="game1" height="500px" width="500px"></canvas>
+            <canvas id="game2" class="game2" height="500px" width="500px"></canvas>
+
+            <div id="abilities2" class="abilities2">
+                <button id="radiance2" class="button1-2">
+                    <span>"No Keybind"</span>
+                </button>
+                <button id="goldenGun2" class="button2-2">
+                    <span>"No Keybind"</span>
+                </button>
+                <button id="wardOfDawn2" class="button3-2">
+                    <span>"No Keybind"</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="health-bars" class="health-bars">
+            <canvas id="player1Health" class="player1Health" height="30px" width="500px"></canvas>
+            <canvas id="player2Health" class="player2Health" height="30px" width="500px"></canvas>
+        </div>
+
+
+        <!--<audio id="audio1" autoplay loop src="Lupus Nocte - Howling.mp3" type="audio/mp3"></audio>
+            <audio id="audio2" autoplay loop src="Shaxxercize.mp3" type="audio/mp3"></audio>
+            <audio id="audio3" autoplay loop src="Battle Ready _ Destiny 2_ Lightfall (Original Soundtrack).mp3" type="audio/mp3"></audio>
+        -->
+    </body>
+</html>
