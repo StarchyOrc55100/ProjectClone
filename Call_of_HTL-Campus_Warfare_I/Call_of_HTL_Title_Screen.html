@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <link href="Call_of_HTL_Style_Title_Screen.css" rel="stylesheet">
+</head>
+<body onload="init()">
+  <div class="middle">
+    <h1>Call of HTL</h1>
+    <h2>Campus Warfare I</h2>
+    
+    <div class="container">
+        <button id="play" class="play" onclick="playTheGame()">--PLAY--</button>
+        <button id="controls" class="controls" onclick="openControls()">Controls</button>
+    </div>
+  </div>
+    <audio id="hoverSound" src="retro-changing-tab.wav" type="audio/wav"></audio>
+    <audio id="theme" src="Lupus Nocte - Howling.mp3" type="audio/mp3" loop></audio>
+</body>
+  <script>
+    //------------Redirect------------
+    function playTheGame() {
+      window.location.href = 'loader.html';
+    }
+
+    function openControls() {
+      window.location.href = 'Controls.html';
+    }
+    
+    //------------VFX und SFX Variablen------------
+    const button1 = document.getElementById('play');
+    const button2 = document.getElementById('controls');
+    const sound = document.getElementById('hoverSound');
+    const theme = document.getElementById('theme')
+
+    sound.load();             //preload für Audio
+    theme.load();
+
+    //------------Effekte------------
+    button1.addEventListener('mouseover', function() {
+      button1.style.backgroundColor = '#E50000';
+      button2.style.backgroundColor = '#330000';
+      button1.style.transform = 'scale(1.05)';
+      document.body.style.backgroundColor = '#4E0505';
+
+      sound.currentTime = 0;    //Fix
+      sound.play();
+    });
+
+    button1.addEventListener('mouseout', function() {
+      button1.style.backgroundColor = '#402cf5';
+      button2.style.backgroundColor = '#402cf5';
+      button1.style.transform = 'scale(1)';
+      document.body.style.backgroundColor = '#0a2a65';
+    });
+
+    button2.addEventListener('mouseover', function() {
+      button2.style.backgroundColor = '#66FFB2';
+      button1.style.backgroundColor = '#35D5A5';
+      button2.style.transform = 'scale(1.05)';
+      document.body.style.backgroundColor = '#008346';
+
+      sound.currentTime = 0;
+      sound.play();
+    });
+
+    button2.addEventListener('mouseout', function() {
+      button2.style.backgroundColor = '#402cf5';
+      button1.style.backgroundColor = '#402cf5';
+      button2.style.transform = 'scale(1)';
+      document.body.style.backgroundColor = '#0a2a65';
+    });
+    
+  </script>
+</html>
